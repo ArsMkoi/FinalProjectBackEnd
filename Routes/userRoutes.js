@@ -76,7 +76,7 @@ var routes = function (User) {
         if (err)
           res.status(500).send(err);
         else {
-          res.status(204).send('Removed');
+          res.status(200).send({status: 'success'});
         }
       });
     });

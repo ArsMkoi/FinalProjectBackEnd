@@ -7,7 +7,9 @@ var gameModel = new Schema({
     },
     category: {type: String},
     platform: {type: String},
-    publisher: {type: String}
+    publisher: {type: String},
+    image_url: {type: String},
+    video_url: {type: String}
 });
 
 module.exports= mongoose.model('Game', gameModel);

@@ -52,6 +52,8 @@ var routes = function (Game) {
             req.game.category = req.body.category;
             req.game.platform = req.body.platform;
             req.game.publisher = req.body.publisher;
+            req.game.image_url = req.body.image_url;
+            req.game.video_url = req.body.video_url;
             req.game.save(function (err) {
                 if (err)
                     res.status(500).send(err);
@@ -78,11 +80,9 @@ var routes = function (Game) {
         })
         .delete(function (req, res) {
             req.game.remove(function (err) {
-                console.log("asdasd", err);
                 if (err)
                     res.status(500).send(err);
                 else {
-                    console.log("here");
                     res.status(200).send({status: "success"});
                 }
             });
